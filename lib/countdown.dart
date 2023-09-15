@@ -85,7 +85,13 @@ class CountDownState extends State<CountDown> {
   Widget buildTimer(BuildContext context) {
 
     return Container(
-      color: Colors.black54,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.purpleAccent, Colors.blueAccent],
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -109,11 +115,14 @@ class CountDownState extends State<CountDown> {
       ElevatedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
-          foregroundColor: MaterialStateProperty.all<Color>(Colors.white70),
+          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
         ),
           onPressed: () => _startCount(),
           child: Text(
-              'Start'
+              'Start',
+            style: TextStyle(
+              fontWeight: FontWeight.bold
+            ),
         ),
       ),
       SizedBox(width: 50),
@@ -124,19 +133,25 @@ class CountDownState extends State<CountDown> {
         ),
         onPressed: () => _addTimer(),
         child: Text(
-            'Add'
+            'Add',
+          style: TextStyle(
+              fontWeight: FontWeight.bold
+          ),
         ),
       ),
 
       SizedBox(width: 50),
       ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.purpleAccent),
           foregroundColor: MaterialStateProperty.all<Color>(Colors.white70),
         ),
         onPressed: () => _stopCount(),
         child: Text(
-            'Stop'
+            'Stop',
+          style: TextStyle(
+              fontWeight: FontWeight.bold
+          ),
         ),
       ),
 
