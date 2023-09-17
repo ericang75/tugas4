@@ -86,11 +86,7 @@ class CountDownState extends State<CountDown> {
 
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.purpleAccent, Colors.blueAccent],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
+        color: Colors.black54
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
